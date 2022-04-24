@@ -4,7 +4,7 @@ public class MessageCipher {
 
     Character[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-    public Character cipherLetter(char letter){
+    Character cipherLetter(char letter){
         int position = Arrays.asList(alphabet).indexOf(letter);
         if( position+2>= alphabet.length){
             position=Math.abs( alphabet.length- position-2);
