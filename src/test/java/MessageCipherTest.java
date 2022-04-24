@@ -4,17 +4,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MessageCipherTest {
     @Test
-//    public void cipherLetter_returnsCharPlusTwoPosition_C(){
-//        MessageCipher messageCipher = new MessageCipher();
-//        Character expected = 'C';
-//        assertEquals(expected, messageCipher.cipherLetter('A'));
-//    }
+    public void cipherLetter_returnsCharPlusTwoPosition_J(){
+        MessageCipher messageCipher = new MessageCipher();
+        Character expected = 'J';
+        assertEquals(expected, messageCipher.cipherLetter('H'));
+    }
 
 //    @Test
-//    public void cipherLetter_returnsCharPlusTwoPosition_B(){
+//    public void cipherLetter_returnsCharPlusTwoPosition_K(){
 //        MessageCipher messageCipher = new MessageCipher();
-//        Character expected = 'B';
-//        assertEquals(expected, messageCipher.cipherLetter('Z'));
+//        Character expected = 'K';
+//        assertEquals(expected, messageCipher.cipherLetter('I'));
 //    }
 
 }
