@@ -23,4 +23,20 @@ public class MessageCipherTest {
         String expected = "JK";
         assertEquals(expected, messageCipher.cipherWord("HI"));
     }
+
+    @Test
+    public void cipherWord_returnsCipherWord_NCBA(){
+        MessageCipher messageCipher = new MessageCipher();
+        String expected = "NCBA";
+        assertEquals(expected, messageCipher.cipherWord("LAZY"));
+    }
+
+//    @Test
+//    public void cipherWord_returnsCipherWord_NCBA(){
+//        MessageCipher messageCipher = new MessageCipher();
+//        String expected = "NCBA";
+//        assertEquals(expected, messageCipher.cipherWord("LAZY"));
+//    }
 }
+
+
