@@ -10,11 +10,11 @@ public class MessageCipherTest {
         assertEquals(expected, messageCipher.cipherLetter('H'));
     }
 
-//    @Test
-//    public void cipherLetter_returnsCharPlusTwoPosition_K(){
-//        MessageCipher messageCipher = new MessageCipher();
-//        Character expected = 'K';
-//        assertEquals(expected, messageCipher.cipherLetter('I'));
-//    }
+    @Test
+    public void cipherLetter_returnsCharPlusTwoPosition_K(){
+        MessageCipher messageCipher = new MessageCipher();
+        Character expected = 'K';
+        assertEquals(expected, messageCipher.cipherLetter('I'));
+    }
 
 }
