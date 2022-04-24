@@ -17,4 +17,10 @@ public class MessageCipherTest {
         assertEquals(expected, messageCipher.cipherLetter('I'));
     }
 
+    @Test
+    public void cipherWord_returnsCipherWord_JK(){
+        MessageCipher messageCipher = new MessageCipher();
+        String expected = "JK";
+        assertEquals(expected, messageCipher.cipherWord("HI"));
+    }
 }
