@@ -15,6 +15,17 @@ public class MessageCipher {
         return alphabet[position];
     }
 
+    private String cipherWord(String word){
+        char[] wordCharacterArray= word.toUpperCase().toCharArray();
+        char space = ' ';
+        StringBuilder cipherWord = new StringBuilder(" ");
+
+        for (char c : wordCharacterArray) {
+            cipherWord.append(cipherLetter(c));
+        }
+
+        return cipherWord.toString();
+    }
 
 }
 
