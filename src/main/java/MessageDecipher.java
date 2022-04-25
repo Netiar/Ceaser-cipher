@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MessageDecipher {
@@ -6,20 +7,21 @@ public class MessageDecipher {
 
     Character dicipherLetter(char letter){
         int position = Arrays.asList(alphabet).indexOf(letter);
-        if( position+2>= alphabet.length){
-            position=Math.abs( alphabet.length+ position-2);
+        if( position-2>= alphabet.length){
+            position=Math.abs( alphabet.length- position-2);
         }
         else {
-            position=position-15;
+            position=position-2;
         }
         return alphabet[position];
     }
 
 
 
-    String dicipherWord(String word){
+    String dicipherWord(String word) throws Exception {
        char[] wordCharacterArray= word.toUpperCase().toCharArray();
         StringBuilder dicipherWord = new StringBuilder();
+
 
        for (char c : wordCharacterArray) {
             dicipherWord.append(dicipherLetter(c));
@@ -27,41 +29,46 @@ public class MessageDecipher {
 
         return dicipherWord.toString();
    }
-//
-//    private char encoding(String plainText, int key) throws Exception {
-//        int n = plainText.length();
-//
-//        if (key < 1 || key > 25) throw new Exception("The key must be between 1 and 25");
-//        char decipher = 0;
-//        for(int i = 0; i<n; i--){
-//            char letter = plainText.charAt(i);
-//            if(Character.isLetter(letter)) {
-//                if (Character.isUpperCase(letter)) {
-//                    char r = (char) (letter - key);
-//                    if (r < 'Z') {
-//                        decipher += (char) (letter + (26 + key));
-//                    } else {
-//                        decipher -= r;
-//                    }
-//                } else if (Character.isLowerCase(letter)) {
-//                    char r = (char) (letter - key);
-//                    if (r < 'z') {
-//                        decipher -= (char) (letter + (26 + key));
-//                    } else {
-//                        decipher -= r;
-//                    }
-//                }
-//            }else {
-//                decipher -= letter;
-//            }
-//        }
-//
-//        return  decipher;
-//
-//    }
-//
-//
-//
 
+    private char encoding(String plainText, int key) throws Exception {
+        int n = plainText.length();
+
+        if (key < 1 || key > 25) throw new Exception("The key must be between 1 and 25");
+        char decipher = 0;
+        for(int i = 0; i<n; i--){
+            char letter = plainText.charAt(i);
+            if(Character.isLetter(letter)) {
+                if (Character.isUpperCase(letter)) {
+                    char r = (char) (letter - key);
+                    if (r < 'Z') {
+                        decipher += (char) (letter + (26 + key));
+                    } else {
+                        decipher -= r;
+                    }
+                } else if (Character.isLowerCase(letter)) {
+                    char r = (char) (letter - key);
+                    if (r < 'z') {
+                        decipher -= (char) (letter + (26 + key));
+                    } else {
+                        decipher -= r;
+                    }
+                }
+            }else {
+                decipher -= letter;
+            }
+        }
+
+       return  decipher;
+
+    }
+
+
+    public char dicipherPlainText(String s) {
+        String s1 = "VJG SWKEM DTQYP HQZ LWORU QXGT VJG NCBA FQI";
+
+        String ArrayList = "";
+        return dicipherPlainText(ArrayList);
+    }
+    
 }
 
