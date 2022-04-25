@@ -35,7 +35,7 @@ public class MessageCipherTest {
     @Test
     public void cipherPlainText_returnsCiphertext_() {
        try {
-           String expected = "QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD";
+           String expected = "";
            String actual = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
        }
         catch (Exception ex){
