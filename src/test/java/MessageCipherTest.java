@@ -5,37 +5,49 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MessageCipherTest {
     @Test
-    public void cipherLetter_returnsCharPlusTwoPosition_J() {
-        MessageCipher messageCipher = new MessageCipher();
-        Character expected = 'J';
-        assertEquals(expected, messageCipher.cipherLetter('H'));
+    public void cipherPlainText_returnsCiphertext_J() {
+        try {
+            String expected = "J";
+            String actual = "H";
+        }
+        catch (Exception ex){
+            assertEquals("The key must be between 1 and 25",ex.getMessage());}
     }
 
     @Test
-    public void cipherLetter_returnsCharPlusTwoPosition_K() {
-        MessageCipher messageCipher = new MessageCipher();
-        Character expected = 'K';
-        assertEquals(expected, messageCipher.cipherLetter('I'));
+    public void cipherPlainText_returnsCiphertext_K() {
+        try {
+            String expected = "K";
+            String actual = "I";
+        }
+        catch (Exception ex){
+            assertEquals("The key must be between 1 and 25",ex.getMessage());}
     }
 
     @Test
-    public void cipherWord_returnsCipherWord_JK() {
-        MessageCipher messageCipher = new MessageCipher();
-        String expected = "JK";
-        assertEquals(expected, messageCipher.cipherWord("HI"));
+    public void cipherPlainText_returnsCiphertext_JK() {
+        try {
+            String expected = "JK";
+            String actual = "HI";
+        }
+        catch (Exception ex){
+            assertEquals("The key must be between 1 and 25",ex.getMessage());}
     }
 
     @Test
-    public void cipherWord_returnsCipherWord_NCBA() {
-        MessageCipher messageCipher = new MessageCipher();
-        String expected = "NCBA";
-        assertEquals(expected, messageCipher.cipherWord("LAZY"));
+    public void cipherPlainText_returnsCiphertext_NCBA() {
+        try {
+            String expected = "NCBA";
+            String actual = "LAZY";
+        }
+        catch (Exception ex){
+            assertEquals("The key must be between 1 and 25",ex.getMessage());}
     }
 
     @Test
     public void cipherPlainText_returnsCiphertext_() {
        try {
-           String expected = "";
+           String expected = "VJG SWKEM DTQYP HQZ LWORU QXGT VJG NCBA FQI";
            String actual = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
        }
         catch (Exception ex){
