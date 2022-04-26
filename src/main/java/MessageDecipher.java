@@ -1,74 +1,51 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class MessageDecipher {
 
     Character[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-    Character dicipherLetter(char letter){
-        int position = Arrays.asList(alphabet).indexOf(letter);
-        if( position-2>= alphabet.length){
-            position=Math.abs( alphabet.length- position-2);
+    private static String decrypt (String plainText, int shift ){
+        if (shift>26){
+            shift=shift%26;
         }
-        else {
-            position=position-2;
-        }
-        return alphabet[position];
-    }
-
-
-
-    String dicipherWord(String word) throws Exception {
-       char[] wordCharacterArray= word.toUpperCase().toCharArray();
-        StringBuilder dicipherWord = new StringBuilder();
-
-
-       for (char c : wordCharacterArray) {
-            dicipherWord.append(dicipherLetter(c));
+        else if (shift<0){
+            shift=(shift%26)+26;
         }
 
-        return dicipherWord.toString();
-   }
-
-    private char encoding(String plainText, int key) throws Exception {
-        int n = plainText.length();
-
-        if (key < 1 || key > 25) throw new Exception("The key must be between 1 and 25");
-        char decipher = 0;
-        for(int i = 0; i<n; i--){
-            char letter = plainText.charAt(i);
-            if(Character.isLetter(letter)) {
-                if (Character.isUpperCase(letter)) {
-                    char r = (char) (letter - key);
-                    if (r < 'Z') {
-                        decipher += (char) (letter + (26 + key));
-                    } else {
-                        decipher -= r;
+        String decipherText="";
+        int length= plainText.length();
+        for(int i=0; i<length; i++ ){
+            char ch= plainText.charAt(i);
+            if (Character.isLetter(ch)){
+                if (Character.isLowerCase(ch)){
+                    char c= (char)(ch-shift);
+                    if (c<'a'){
+                        decipherText += (char)(ch + (26-shift));
                     }
-                } else if (Character.isLowerCase(letter)) {
-                    char r = (char) (letter - key);
-                    if (r < 'z') {
-                        decipher -= (char) (letter + (26 + key));
-                    } else {
-                        decipher -= r;
+                    else {
+                        decipherText += c;
                     }
                 }
-            }else {
-                decipher -= letter;
+                else if (Character.isUpperCase(ch)){
+                    char c= (char)(ch-shift);
+                    if (c<'A'){
+                        decipherText += (char)(ch + (26-shift));
+                    }
+                    else {
+                        decipherText += c;
+                    }
+                }
+            }
+            else {
+                decipherText += ch;
             }
         }
+        return decipherText;
 
-       return  decipher;
+
 
     }
 
-
-    public char dicipherPlainText(String s) {
-        String s1 = "VJG SWKEM DTQYP HQZ LWORU QXGT VJG NCBA FQI";
-
-        String ArrayList = "";
-        return dicipherPlainText(ArrayList);
+    public String dicipherText(String jumps) {
+        return jumps ;
     }
-    
 }
 
